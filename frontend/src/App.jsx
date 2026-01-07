@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react'
-import './App.css'
+//import './App.css'
 import {io} from 'socket.io-client'
 import Login from './components/Login.jsx'
 import Home from './components/Home.jsx'
 import {createBrowserRouter} from 'react-router'
 import {RouterProvider} from 'react-router/dom'
+import About from './components/About.jsx'
+import Conversation from './components/Conversation.jsx'
 
 
 import {SocketContextProvider} from './context/socketContext.js'
@@ -16,7 +18,17 @@ const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <Home/>
+    element: <Home/>,
+    children: [
+      {
+        path: "",
+        element: <About/>
+      },
+      {
+        path: "chat/:chatid",
+        element: <Conversation/>
+      }
+    ]
   }
 ]);
 
