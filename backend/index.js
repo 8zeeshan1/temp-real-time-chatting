@@ -38,6 +38,10 @@ io.on("connection", (socket)=>{
     socket.on('check', (data)=>{
         console.log(data,' Pong!')
     })
+    socket.on("message-from-client", (data)=>{
+        console.log(data);
+        io.to(data.to).emit("message-from-server", data.message)
+    })
     console.log(socket.id)
     console.log("User connected");
     

@@ -29,11 +29,11 @@ function Home() {
       console.log(users);
       setNames(users);
     })
-},[socket]);
+},[]);
 
 const handleUserClicks = (name)=>{
   console.log("it's clicking")
-  navigate(`/home/chat/:${name.id}`);;
+  navigate(`/home/chat/${name.id}`);;
 }
 
  return (
