@@ -4,7 +4,9 @@ function About() {
     const [me, setMe] = useState();
     
     useEffect(()=>{
-              setMe(localStorage.getItem('Current_user'));
+              const name = JSON.parse(localStorage.getItem('Current_user'))
+              console.log(name)
+              setMe(name.userName);
     },[])
   return (
     <div className="border-2 m-2 p-2 flex-1 flex flex-col">

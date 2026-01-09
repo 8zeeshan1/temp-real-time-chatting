@@ -13,27 +13,25 @@ function Home() {
     }
     else{
       if(socket?.current === null){
-        connectUser(localStorage.getItem('Current_user'))
+        connectUser(JSON.parse(localStorage.getItem('Current_user')))
       }
-      
     }
   }, [])
 
-  useEffect(()=>{
-    if(socket.current)
-    socket.current.emit('check', "Ping!");
-  },[socket])
-
   useEffect(()=>{ 
     socket.current.on("active-users", (users)=>{
-      console.log(users);
-      setNames(users);
+      setNames([])
+      users.forEach(([uid, user]) => {
+        setNames(prev=>[...prev, {uid: uid, userName: user.userName}])
+      });
     })
 },[]);
 
 const handleUserClicks = (name)=>{
   console.log("it's clicking")
-  navigate(`/home/chat/${name.id}`);;
+  navigate(`/home/chat/${name.uid}`, {
+    state: name
+  });
 }
 
  return (
@@ -44,7 +42,7 @@ const handleUserClicks = (name)=>{
       <b className='text-2xl m-2'>Active Users:</b>
 
       {names.map((name) => (
-        <div className="border-2 p-1 h-14 text-2xl rounded-2xl w-full flex" key={name.id}>
+        <div className="border-2 p-1 h-14 text-2xl rounded-2xl w-full flex" key={name.uid}>
           <button className = "w-full" value={name} onClick={()=>handleUserClicks(name)}>{name.userName}</button>
         </div>
       ))}

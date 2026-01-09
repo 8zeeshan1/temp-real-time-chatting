@@ -37,10 +37,10 @@ function App() {
 
 const socket = useRef(null)
 
-const connectUser = (userName)=>{
+const connectUser = (userInfo)=>{     //Change
   const newSocket = io(import.meta.env.VITE_SERVER_URL)
   newSocket.on("connect", ()=>{
-    newSocket.emit("userName", userName)
+    newSocket.emit("userInfo", userInfo)      //change
   })
   socket.current = newSocket;
 }

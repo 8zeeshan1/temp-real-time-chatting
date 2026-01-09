@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useSocket } from "../context/socketContext";
+import {nanoid} from 'nanoid'
+
 function Login() {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
@@ -8,10 +10,11 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await connectUser(userName);
-    localStorage.setItem('Current_user', userName);
+    const uid = nanoid();           //change
+    connectUser({uid,userName});      //change
+    localStorage.setItem('Current_user', JSON.stringify({uid: uid,userName:userName}));         //changes
     setUserName("");
-    await navigate('/home');
+    navigate('/home');
     
   };
 
