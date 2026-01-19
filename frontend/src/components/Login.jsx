@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useSocket } from "../context/socketContext";
 import {nanoid} from 'nanoid'
+import { useEffect } from "react";
 
 function Login() {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const {connectUser} = useSocket();  
+
+  useEffect(()=>{
+    localStorage.removeItem("messages");
+  },[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();

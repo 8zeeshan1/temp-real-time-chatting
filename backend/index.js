@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const server = createServer(app);
 const users = require("./storage/users");
-
+// Have to resolve a problem that is two users when messaging the same person the on the conversation window of that person messages are colliding and all the messages are coming there only.
 const io = new Server(server, {
     cors: {
         origin: process.env.CLIENT_URL,
@@ -39,7 +39,7 @@ io.on("connection", (socket)=>{
     })
     socket.on("message-from-client", (data)=>{
         console.log(data);
-        io.to((users.get(data.to)).sid).emit("message-from-server", data.message)
+        io.to((users.get(data.to)).sid).emit("message-from-server", data)
     })
     console.log(socket.id)
     console.log("User connected");
