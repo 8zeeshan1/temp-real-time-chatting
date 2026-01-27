@@ -53,9 +53,7 @@ const handleUserClicks = (name)=>{
 
       {/* Scrollable inside */}
      {/*  <div className="overflow-y-auto flex-1 border"> */}
-        <div className="border-2 m-2 p-2 flex-1 min-w-0 md:min-w-[650px] overflow-hidden">
           <Outlet />
-        </div>
 
       {/*</div>*/}
 
