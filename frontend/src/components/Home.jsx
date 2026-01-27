@@ -39,7 +39,7 @@ const handleUserClicks = (name)=>{
 
     {/* Sidebar */}
 <div className="border-2 m-2 p-2 overflow-y-auto shrink-0
-                    w-72 min-w-[80px]
+                    w-72 min-w-[40px]
                     lg:w-72 
                     md:w-48 
                     sm:w-24">
