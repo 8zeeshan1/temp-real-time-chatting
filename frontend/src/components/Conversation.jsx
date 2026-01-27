@@ -91,7 +91,7 @@ function Conversation() {
 };
 
   return (
-<div className="border-2 m-2 p-2 flex-1 min-w-0 md:min-w-[400px] overflow-hidden">
+<div className="border-2 m-2 p-2 flex-1 overflow-hidden">
       <div className="border-b p-2">
         <b>{state.userName}</b>
       </div>
