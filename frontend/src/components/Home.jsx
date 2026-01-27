@@ -38,7 +38,7 @@ const handleUserClicks = (name)=>{
   <div className="flex h-screen w-screen">
 
     {/* Sidebar */}
-   <div className="border-2 m-2 p-2 w-72 min-w-[180px] shrink-0 overflow-y-auto">
+   <div className="border-2 m-2 p-2 w-72 min-w-0 md:min-w-[180px] overflow-y-auto">
       <b className='text-2xl m-2'>Active Users:</b>
 
       {names.map((name) => (
@@ -53,7 +53,7 @@ const handleUserClicks = (name)=>{
 
       {/* Scrollable inside */}
      {/*  <div className="overflow-y-auto flex-1 border"> */}
-        <div className="border-2 m-2 p-2 flex-1 min-w-[650px]">
+        <div className="border-2 m-2 p-2 flex-1 min-w-0 md:min-w-[650px] overflow-hidden">
           <Outlet />
         </div>
 
