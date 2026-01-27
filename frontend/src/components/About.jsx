@@ -9,7 +9,7 @@ function About() {
               setMe(name.userName);
     },[])
   return (
-<div className="border-2 m-2 flex-1 flex flex-col overflow-hidden">
+    <div className="border-2 m-2 p-2 flex-1 flex flex-col min-w-[280px]">
     <b>About</b>
         <h2>Logged in as {me}</h2>
     </div>
