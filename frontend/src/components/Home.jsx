@@ -38,7 +38,7 @@ const handleUserClicks = (name)=>{
   <div className="flex h-screen w-screen">
 
     {/* Sidebar */}
-    <div className="border-2 m-2 p-2 w-72 overflow-y-auto">
+   <div className="border-2 m-2 p-2 w-72 min-w-[180px] shrink-0 overflow-y-auto">
       <b className='text-2xl m-2'>Active Users:</b>
 
       {names.map((name) => (
