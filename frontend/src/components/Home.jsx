@@ -39,7 +39,7 @@ const handleUserClicks = (name)=>{
 
     {/* Sidebar */}
 <div className="border-2 m-2 p-2 w-72 overflow-y-auto">
-      <b className='text-2xl m-2'>Active Users:</b>
+  <b className='text-2xl m-2'>Active Users:</b>
 
       {names.map((name) => (
         <div className="border-2 p-1 h-14 text-2xl rounded-2xl w-full flex" key={name.uid}>
