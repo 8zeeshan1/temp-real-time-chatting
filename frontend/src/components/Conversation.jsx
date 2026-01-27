@@ -91,8 +91,8 @@ function Conversation() {
 };
 
   return (
-<div className="border-2 m-2 p-2 flex-1 overflow-hidden">
-      <div className="border-b p-2">
+<div className="border-2 m-2 flex-1 flex flex-col overflow-hidden">
+  <div className="border-b p-2">
         <b>{state.userName}</b>
       </div>
 
