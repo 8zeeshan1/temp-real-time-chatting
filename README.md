@@ -61,3 +61,4 @@ This project was built as a learning-first system to understand:
 
 **Mohd Zeeshan Quraishi**  
 B.Tech CSE | Full-Stack & Real-Time Systems Learner
+## [![Portfolio](https://img.shields.io/badge/🌐_Portfolio-Visit_Now-blue?style=for-the-badge)](https://zeeshanquraishi.netlify.app/)
